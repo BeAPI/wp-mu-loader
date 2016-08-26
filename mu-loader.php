@@ -6,15 +6,20 @@
  * @return array
  */
 function mu_loader_plugins_files() {
+	if ( defined( 'WP_INSTALLING' ) && true === WP_INSTALLING ) {
+		// Do nothing during installation
+ 		return array();
+	}
+	
 	if ( ! function_exists( 'get_plugins' ) ) {
 		// get_plugins is not included by default
 		require ABSPATH . 'wp-admin/includes/plugin.php';
 	}
 
-	// Invalid cache
 	$plugins = array();
 	foreach ( get_plugins( '/../mu-plugins' ) as $plugin_file => $data ) {
-		if ( dirname( $plugin_file ) != '.' && dirname( $plugin_file ) != 'mu-loader' ) { // skip files directly at root
+		if ( dirname( $plugin_file ) != '.' && dirname( $plugin_file ) != 'mu-loader' ) {
+			// skip files directly at root
 			$plugins[] = $plugin_file;
 		}
 	}
