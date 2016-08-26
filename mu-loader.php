@@ -42,14 +42,14 @@ function mu_loader_plugins_files()
     return $plugins;
 }
 
+foreach (mu_loader_plugins_files() as $plugin_file) {
+    require_once WPMU_PLUGIN_DIR . '/' . $plugin_file;
+}
+
 add_action('muplugins_loaded', function(){
     if (isset($_SERVER['REQUEST_URI']) && preg_match( '/\/wp-admin(\/network)?\/plugins\.php/', $_SERVER['REQUEST_URI'])) {
         // delete cache when viewing plugins page in /wp-admin/
         delete_site_transient('mu_loader_plugins');
-    }
-
-    foreach (mu_loader_plugins_files() as $plugin_file) {
-        require_once WPMU_PLUGIN_DIR . '/' . $plugin_file;
     }
 });
 
