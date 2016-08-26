@@ -1,5 +1,5 @@
 {
-    "name": "wemakecustom/wp-mu-loader",
+    "name": "beapi/wp-mu-loader",
     "type": "wordpress-muplugin",
     "description": "Enables the loading of Wordpress plugins sitting in mu-plugins (as folders)",
     "keywords": ["wordpress","plugins"],
@@ -9,6 +9,11 @@
             "name": "WeMakeCustom",
             "email": "info@wemakecustom.com",
             "homepage": "http://www.wemakecustom.com"
+        },
+        {
+            "name": "BeAPI",
+            "email": "humans@beapi.fr",
+            "homepage": "http://www.beapi.fr"
         }
     ],
     "require": {
