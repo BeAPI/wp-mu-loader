@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: MU plugins subdirectory loader
- * Plugin URI: https://github.com/wemakecustom/wp-mu-loader
+ * Plugin URI: https://github.com/BeAPI/wp-mu-loader/
  * Description: Enables the loading of plugins sitting in mu-plugins (as folders)
  * Version: 1.0
- * Author: WeMakeCustom
- * Author URI: http://www.wemakecustom.com/
+ * Author: BeAPI, WeMakeCustom
+ * Author URI: http://beapi.fr/
  *
  * Will clear cache when visiting the plugin page in /wp-admin/.
  * Will also clear cache if a previously detected mu-plugin was deleted.
