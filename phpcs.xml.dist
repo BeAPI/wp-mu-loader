@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="wp-mu-loader">
+    <description>PHPCS rules for wp-mu-loader (WordPress Coding Standards).</description>
+
+    <file>mu-loader.php</file>
+    <file>mu-require.php</file>
+
+    <exclude-pattern>/vendor/*</exclude-pattern>
+
+    <rule ref="WordPress">
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+        <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+    </rule>
+
+    <config name="minimum_wp_version" value="6.0"/>
+    <config name="testVersion" value="7.4-"/>
+</ruleset>

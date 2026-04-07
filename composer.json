@@ -1,15 +1,14 @@
 {
     "name": "beapi/wp-mu-loader",
-    "type": "wordpress-muplugin",
     "description": "Enables the loading of Wordpress plugins sitting in mu-plugins (as folders)",
-    "keywords": ["wordpress","plugins"],
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-or-later",
+    "type": "wordpress-muplugin",
+    "version": "1.0.4",
+    "keywords": [
+        "wordpress",
+        "plugins"
+    ],
     "authors": [
-        {
-            "name": "WeMakeCustom",
-            "email": "info@wemakecustom.com",
-            "homepage": "http://www.wemakecustom.com"
-        },
         {
             "name": "BeAPI",
             "email": "humans@beapi.fr",
@@ -17,12 +16,24 @@
         }
     ],
     "require": {
-        "composer/installers": "~1.0"
+        "composer/installers": "^1.0 || ^2.0"
     },
-    "suggest" : {
-        "wemakecustom/wp-mu-composer": "Composer includer"
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "squizlabs/php_codesniffer": "^3.13",
+        "wp-coding-standards/wpcs": "^3.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "extra": {
         "installer-name": "mu-loader"
+    },
+    "scripts": {
+        "cbf": "phpcbf",
+        "cs": "phpcs"
     }
 }
